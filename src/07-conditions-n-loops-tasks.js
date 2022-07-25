@@ -389,8 +389,13 @@ function toNaryString(num, n) {
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
-function getCommonDirectoryPath(/* pathes */) {
-  throw new Error('Not implemented');
+function getCommonDirectoryPath(pathes) {
+  const arr = [];
+  for (let i = 0; i < Math.min(...pathes.map((v) => v.length)); i += 1) {
+    if (pathes.every((v) => v[i] === pathes[0][i])) arr.push(pathes[0][i]);
+    else break;
+  }
+  return arr.join('').replace(/\w+$/g, '');
 }
 
 
