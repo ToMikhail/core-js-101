@@ -399,6 +399,7 @@ function getCommonDirectoryPath(pathes) {
 }
 
 
+
 /**
  * Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
